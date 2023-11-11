@@ -20,35 +20,9 @@
 module load samtools
 
 # baseline cfDNA patients
-cd /cluster/projects/scottgroup/data/200725_A00827_0178_BHMVL3DRXX_Lok_Sami/cfDNA_MeDIP
+cd "DIRECTORY_OF_INTEREST"
 
-echo Calculating coverage for baseline cfDNA samples 
-
-for bamfile in $(ls *.bam)
-do
-echo Working with file: $bamfile
-samtools depth -a $bamfile  |  awk '{sum+=$3} END { print "Average coverage (x) = ",sum/NR}'
-echo \n\n
-done
-
-
-# baseline PBL patients
-cd /cluster/projects/scottgroup/data/200725_A00827_0178_BHMVL3DRXX_Lok_Sami/PBL_baseline_MeDIP
-
-echo Calculating coverage for baseline PBL samples
-
-for bamfile in $(ls *.bam)
-do
-echo Working with file: $bamfile
-samtools depth -a $bamfile  |  awk '{sum+=$3} END { print "Average coverage (x) = ",sum/NR}'
-echo \n\n
-done
-
-
-# Sami healthy non cancer controls cfDNA
-cd /cluster/projects/scottgroup/data/200725_A00827_0178_BHMVL3DRXX_Lok_Sami/Sami_Healthy_Donor_cfDNA
-
-echo Calculating coverage for sami healthy non cancer controls cfDNA
+echo Calculating coverage 
 
 for bamfile in $(ls *.bam)
 do
