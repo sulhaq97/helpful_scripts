@@ -3,8 +3,6 @@
 # The script also renames the chromosome names to "chr1" or "chr2" (originally: 1 or 2)
 # Written by Sami Ul Haq
 
-setwd("C:/Users/Sami/OneDrive - UHN/cfMeDIP/data/ENSEMBL Data")
-
 library(GenomicRanges)
 library(rtracklayer)
 
